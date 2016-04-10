@@ -1,0 +1,61 @@
+﻿{% extends 'basewindowopen.html' %}
+{% load staticfiles %}
+
+{% block title %} Selected Street View {% endblock %}
+
+{% block addedstylesheets %} 
+
+ <!--   
+     -->
+     {% include 'datatablestylesheets.html' %}
+
+ {% endblock %}
+
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <p id="testpara">   </p>
+    <p id="para"> {{ paragraph_to_print }} </p>
+</div>
+
+<div class="table-responsive">
+<table id="voters" class="display table table-hover" >
+    <thead>
+        <tr>
+            <th>Street Number</th>
+            <th>Street Name</th>
+            <th>Unit</th>
+            <th>City</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Current Party</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+{% endblock content %}
+
+{% block addedscripts %} 
+ <!--   
+          -->
+    {% include 'datatablescripts.html' %}
+
+        <script src="{% static 'js/mydatatable.js' %}"></script> <!-- cag20160116 - use this to add voter names :) -->
+        <script src="{% static 'js/traversefunction.js' %}"></script>
+        <script src="{% static 'js/needvoters.js' %}"></script> <!-- cag20160116 - use this to find voter names that live at homes found:) -->
+        <script src="{% static 'js/needhomes.js' %}"></script> <!-- cag20160116 - use this to find homes that match city and street -->
+        <script src="{% static 'js/jstestdt2.js' %}"></script> <!-- cag20160309 - changed from jstestdt.js so we can listen for the class?? -->
+
+{% endblock addedscripts %}

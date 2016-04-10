@@ -1,0 +1,146 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} List of Voters in Party {{request.party}} {% endblock %}
+
+{% block content %}
+
+    {% if ajaxelectpage %} <!--# if context is ajaxelectpage  -->
+    <div>
+    <h3>Voter Table</h3>
+        <div class="pagination">
+    <span class="step-links">
+        {% if ajaxelectpage.has_previous %}
+            <a class="btn btn-sm btn-default" href="?page={{ ajaxelectpage.previous_page_number }}" role="button">previous</a>
+        {% endif %}
+        <span class="current">
+            Page {{ ajaxelectpage.number }} of {{ ajaxelectpage.paginator.num_pages }}.
+        </span>
+        {% if ajaxelectpage.has_next %}
+            <a class="btn btn-sm btn-default" href="?page={{ ajaxelectpage.next_page_number }}" role="button">next</a>
+        {% endif %}
+    </span>
+</div>
+        <!--    {#
+
+    <div id="voterheading" class="row">
+      <div class="col-xs-6 col-md-4">a lot of stuff just in one place - ho wi</div>
+      <div class="col-xs-6 col-md-2">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-2">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-2">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-2">.col-xs-6 .col-md-4</div>
+    </div>
+                            #}        -->
+    <table id="electable" class="table table-bordered"> {% csrf_token %}
+        <tr id="voterheading" class="voterheadingclass active">
+<!--
+             <th>Get Voters</th>
+-->
+             <th>City</th>
+             <th>Address </th>
+             <th>R Voters</th>
+             <th>U Voters</th>
+             <th>M Voters</th>
+             <th>D Voters</th>
+         </tr> <!-- # column title headings -->
+    {% for elect in ajaxelectpage  %}
+        <tr id="voterrowid" class="voterrowclass" data-rowid ="{{ elect.vstat_id }}"
+            data-city ="{{ elect.city }}"
+            data-street_number ="{{ elect.street_number }}"
+            data-street_name ="{{ elect.street_name }}"
+            data-unit ="{{ elect.unit }}"
+            >
+<!--
+            <td> <a href="javascript:NeedVoters()" class="btn btn-info" id="grabVoters">Get Voters</a></td>
+-->
+            <td> {{ elect.city|lower|capfirst }} </td>
+            <td class="namesandaddress"> {{ elect.street_number }}  {{ elect.street_name|lower|capfirst }} {{ elect.street_name_2|lower|capfirst}}  {{ elect.unit}}       </td>
+            <td> {{ elect.rvoters }}  </td>
+            <td> {{ elect.uvoters }}  </td>
+            <td> {{ elect.mvoters }}  </td>
+            <td> {{ elect.dvoters }}  </td>
+        </tr> <!-- # model data sent from specified view -->
+    {% endfor %}
+    </table>
+</div>
+{% else %}
+<div>
+      <h3>some other list</h3>
+    <p>unable to display data within context provided.</p>
+</div>
+{% endif %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if ajaxelectpage.has_previous %}
+            <a class="btn btn-sm btn-default" href="?page={{ ajaxelectpage.previous_page_number }}" role="button">previous</a>
+        {% endif %}
+        <span class="current">
+            Page {{ ajaxelectpage.number }} of {{ ajaxelectpage.paginator.num_pages }}.
+        </span>
+        {% if ajaxelectpage.has_next %}
+            <a class="btn btn-sm btn-default" href="?page={{ ajaxelectpage.next_page_number }}" role="button">next</a>
+        {% endif %}
+    </span>
+</div>
+
+
+<div>
+  <h1 id="firsth1">List of Voters</h1>
+  <p id="firstp">{{ query_information }}</p>      
+
+  <h2>This is electablevstatsajax.html</h2>
+  <p>The party specified is 
+    {% for p in party_list %}
+    {{p}}
+    {% endfor %}
+    </p>
+
+  <p>The list includes data for the following list of towns
+    {% for t in town_list %}
+    {{t}}
+    {% endfor %}
+    </p>
+    <P> this isn't working yet!!! keep on trying!</P>
+</div>
+
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="">
+    Option one is this and that&mdash;be sure to include why it's great
+  </label>
+</div>
+<div class="checkbox disabled">
+  <label>
+    <input type="checkbox" value="" disabled>
+    Option two is disabled
+  </label>
+</div>
+
+<div>
+  <h4>Select Option - maybe get this working so you can select which towns to include?  </h4>
+
+    <form action="b()">
+ 
+            <input type="radio" name="party" value="all" checked />All
+            <br>
+            <input type="radio" name="party" value="specificpartylist" />Specific Party
+            <br>
+            <input type="radio" name="party" value="excludepartylist" />Exlude Party
+            <br>
+            <input type="submit" value="Show Voters" />
+    </form> 
+</div>
+
+<p id="jqtesting">some test</p>
+
+
+
+{% endblock content %}
+{% block addedscripts %} 
+        <script src="{% static 'js/needvoters.js' %}"></script>
+        <script src="{% static 'js/jquerytest.js' %}"></script>
+
+{% endblock addedscripts %}

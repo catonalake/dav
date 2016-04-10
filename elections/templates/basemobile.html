@@ -1,0 +1,91 @@
+﻿{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+-->
+  <!-- Include the jQuery library 
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+-->
+        <!-- Include the jQuery Mobile library 
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+-->
+          <link href="{% static 'jquery-mobile-theme/themes/liberty.min.css' %}" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'jquery-mobile-theme/themes/jquery.mobile.icons.min.css' %}"/>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+			
+
+
+
+
+
+
+    <link rel="icon" href="{% static 'img/winnieandpooh.JPG' %}">
+
+    <title>{% block title %}Voter View    {% endblock title %}</title>
+
+      <!-- 
+          this is where include commonscripts was - getcsrfcookie was in that 
+          -->
+          <script src="{% static 'js/getcsrfcookie.js' %}"></script>  <!-- cag20150124 added for csrf in jquery -->
+
+
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+    <h1 id="pageh1">{% block mobilepage %} House District   {% endblock mobilepage %}</h1>
+
+  <div data-role="header">
+    <h1 id="firsth1">{% block mobileheader %} Voter    {% endblock mobileheader %}</h1>
+
+    <div data-role="navbar">
+      <ul>
+        <li class=""><a href="{% url 'vstats' %}">City Stats</a></li>
+        <li class=""><a href="{% url 'housedistricts' %}">House Stats</a></li>
+        <li class=""><a href="{% url 'districtthenvoters' %}">House Voters</a></li>
+        <li class=""><a href="{% url 'senatedistricts' %}">Senate Stats</a></li>
+        <li class=""><a href="{% url 'senatedistrictthenvoters' %}">Senate Voters</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+  <div data-role="main" class="ui-content">
+    {% block mobilemain %}
+    {% endblock mobilemain %}
+  </div>
+
+  <div data-role="footer">
+    <h1>{% block mobilefooter %}    {% endblock mobilefooter %}</h1>
+  </div>
+
+</div> 
+
+</body>
+    {% block addedscripts %}
+
+
+
+    {% endblock addedscripts %}
+
+</html>

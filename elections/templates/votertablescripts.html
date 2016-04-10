@@ -1,0 +1,12 @@
+﻿{% load staticfiles %}
+{# would be nice to find out how to use the format for static #}
+{# <!--  replaced below with single include above for commonscripts to see if it works... and it does! 
+    <script src = "{% static 'js/home.js' %}" ></script>
+    <script src="{{ STATIC_URL }}js/home.js" ></script>
+    #   this was just an example to model (doesn't seem to be working for javascript):
+    #   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    --> #}
+    {% block addedscripts %} 
+    <script src="{{ STATIC_URL }}js/jstest.js" ></script>
+    {% endblock addedscripts %}
+

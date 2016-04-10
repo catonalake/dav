@@ -1,0 +1,179 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} Party Totals by Street {% endblock %}
+
+{% block addedstylesheets %} 
+
+ <!--   
+     -->
+     {% include 'datatablestylesheets.html' %}
+
+ {% endblock %}
+
+
+
+{% block content %}
+
+<div class="info">
+  <h1 id="firsth1">      City and Street Voter Statistics </h1>
+<!-- 
+    commenting this out 
+    maybe use to 
+    clear map or
+    incorporate  selection checkboxes and use to add map or remove from map? 
+    <button id="mapWindowButton" class="btn btn-info" onclick="loadAPI();">Load Map</button>
+-->
+
+<p id="listdescription"> {{ list_description }} 
+    {% for t in town_list %}
+    {{t}}
+    {% endfor %} 
+</p>
+</div>
+
+
+
+
+ {% if vstats_table %}
+
+
+<div class="table-responsive">
+
+<table id="tableid" class="display table table-hover" >
+    <thead>
+        <tr>
+<!--            <th><input type="text" id="citysearch" class="form-control" placeholder="City Search"/>City</th>-->
+            <th class="all">City</th>
+            <th class="all">Street Name</th>
+            <th class="all">Precinct</th>
+            <th class="all">R Voters</th>
+            <th class="all">U Voters</th>
+            <th class="all">M Voters</th>
+            <th class="all">D Voters</th>
+        </tr>
+    </thead>
+    <tfoot>
+
+    </tfoot>
+    <tbody>
+    {% for vstats in vstats_table %}
+        <tr id="voterrowid" 
+            class="voterrowclass clickable" 
+            data-request-controller ="{{ request_controller }}"
+            data-rowid ="{{ vstats.vstat_id }}"
+            data-city ="{{ vstats.city }}"
+            data-street-name ="{{ vstats.street_name }}"
+            data-vstat-id ="{{ vstats.vstat_id }}"
+            data-state-rep-district ="{{ vstats.state_rep_district }}"
+            data-state-senate-district ="{{ vstats.state_senate_district }}"
+            data-precinct ="{{ vstats.precinct }}"
+            data-congressional-district ="{{ vstats.congressional_district }}"
+            >
+            <td> {{ vstats.city }}</td>
+            <td> {{ vstats.street_name }} </td>
+            <td> {{ vstats.precinct}} </td>
+            <td>{{ vstats.rvoters }}</td>
+            <td>{{ vstats.uvoters }}</td>
+            <td>{{ vstats.mvoters }}</td>
+            <td>{{ vstats.dvoters }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% else %}
+<div>
+      <h3>context is not vstats_table </h3>
+    <p>unable to display data with context provided.</p>
+</div>
+{% endif %}
+
+<div>
+    <p class="lead" id="testpara"></p>
+
+</div>
+
+
+
+<div id="map-canvas" style="width:640px;height:640px"></div>
+<div id="placeholder">
+<br/>
+<br/>
+</div>
+
+<div id="walkinglistbuttongroup" class="pull-right control-group">
+    <button type="button" id="displaylistbutton" class="showingvoters btn btn-primary hidden">Add More Streets</button>
+    <button type="button" id="cleartable" class="showingvoters btn btn-primary hidden">Clear Walking List</button>
+</div>
+
+<div id="placeholder2">
+</div>
+
+<div class="container">
+<div class="table table-responsive">
+<table id="voters" class="display table table-hover hidden" > 
+    <thead>
+        <tr>
+            <th class="none">City</th>
+            <th class="all">Street Name</th>
+            <th class="never">odd or even?</th>
+            <th class="all">Number / Unit</th>
+            <th class="never">Street Number</th>
+            <th class="never">Unit</th>
+            <th class="all">Name (Age)</th>
+            <th class="none">First Name</th>
+            <th class="none">Last Name</th>
+            <th class="all">Current Party</th>
+            <th class="all"></th>
+            <th class="never">Age</th>
+            <th class="none">Precinct</th>
+            <th class="never">Voter ID</th>
+            <th class="none">Senate District</th>
+            <th class="none">House District</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr> {% csrf_token %}
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div id="list"></div>
+
+<div class="container-fluid" id="formcontainer" class="">
+<div id="post_context" class="formandresponse hidden"></div>
+<form method="POST" action='' id="tagForm" class="formandresponse hidden">{% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" value="Save" />
+</form>
+
+<div id="post_response" class="formandresponse hidden"></div>
+</div>
+
+
+{% endblock content %}
+
+{% block addedscripts %} 
+ <!--   
+          -->
+    {% include 'datatablescripts.html' %}
+        <script src="{% static 'js/mydatatable.js' %}"></script> <!-- cag20160116 - use this to add voter names :) -->
+        <script src="{% static 'js/traversefunction.js' %}"></script>
+        <script src="{% static 'js/needvoters.js' %}"></script> <!-- cag20160116 - use this to find voter names that live at homes found:) -->
+        <script src="{% static 'js/needhomes.js' %}"></script> <!-- cag20160116 - use this to find homes that match city and street -->
+        <script src="{% static 'js/jstestdt-mar-26.js' %}"></script>
+
+    {% include 'mapscripts.html' %}
+        <script src="{% static 'js/maptest.js' %}"></script>
+
+
+{% endblock addedscripts %}

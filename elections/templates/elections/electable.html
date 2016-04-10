@@ -1,0 +1,106 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} List of Voters in Party {{request.party}} {% endblock %}
+
+{% block content %}
+
+
+
+<div>
+  <h1 id="firsth1">List of Voters</h1>
+  <p id="firstp">{{query_information }}</p>      
+</div>
+
+<div>
+  <h2>This is electable.html</h2>
+  <p>The party specified is 
+    {% for p in party_list %}
+    {{p}}
+    {% endfor %}
+    </p>
+
+  <p>The this includes the following list of town
+    {% for t in town_list %}
+    {{t}}
+    {% endfor %}
+    </p>
+</div>
+
+
+<div>
+  <h4>Select Option - maybe get this working so you can select which towns to include?  </h4>
+
+    <form action="b()">
+ 
+            <input type="radio" name="party" value="all" checked />All
+            <br>
+            <input type="radio" name="party" value="specificpartylist" />Specific Party
+            <br>
+            <input type="radio" name="party" value="excludepartylist" />Exlude Party
+            <br>
+            <input type="submit" value="Show Voters" />
+    </form> 
+</div>
+
+
+
+    {% if electpage %} <!--# if context is election_table -->
+    <div>
+<!--    {# cag! todo: 
+        # story: as a developer i want to be able to call the same routine with different contexts so the layout is the same but some content is unique so that 
+        find out how to reuse logic here 
+        - with difft context, but some similar things for multiple contexts 
+        e.g. if voter_table h1 or h2 content will be different from if another context
+        #}
+    -->
+    <h3>Voter Table</h3>
+    <table id="electable" class="table table-bordered">
+        <tr>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>Current Party</th>
+             <th>House Number / Unit</th>
+             <th>Street</th>
+             <th>City</th>
+         </tr> <!-- # column title headings -->
+    {% for elect in electpage  %}
+        <tr id="voterrowclass" class="">   <!-- think about using jquery to change class="success" or whatever based on party -->
+            <td> {{ elect.first_name|lower|capfirst }} </td>
+            <td> {{ elect.last_name|lower|capfirst }} </td>
+            <td> {{ elect.current_party}} </td>
+            <td> {{ elect.street_number}} {{ elect.unit}} </td>
+            <td> {{ elect.street_name|lower|capfirst}} {{ elect.street_name_2|lower|capfirst}} </td>
+            <td> {{ elect.city|lower|capfirst}} </td>
+        </tr> <!-- # model data sent from specified view -->
+    {% endfor %}
+    </table>
+</div>
+{% else %}
+<div>
+      <h3>some other list</h3>
+    <p>unable to display data within context provided.</p>
+</div>
+{% endif %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if electpage.has_previous %}
+            <a class="btn btn-sm btn-default" href="?page={{ electpage.previous_page_number }}" role="button">previous</a>
+        {% endif %}
+        <span class="current">
+            Page {{ electpage.number }} of {{ electpage.paginator.num_pages }}.
+        </span>
+        {% if electpage.has_next %}
+            <a class="btn btn-sm btn-default" href="?page={{ electpage.next_page_number }}" role="button">next</a>
+        {% endif %}
+    </span>
+</div>
+
+<p id="jqtesting">some test</p>
+
+{% endblock content %}
+{% block addedscripts %} 
+        <script src="{% static 'js/jstest.js' %}"></script>
+{% endblock addedscripts %}

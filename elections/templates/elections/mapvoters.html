@@ -1,0 +1,118 @@
+{% extends 'basewindowopen.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} 
+Voter Map
+{% endblock title %}
+
+
+{% block jumbotron %} 
+
+ 
+{% endblock jumbotron %} 
+{% block content %}
+
+
+<div id="map-canvas" style="width:640px;height:640px"></div>
+
+{% endblock content %}
+
+{% block formy %}
+
+{% endblock formy %}
+
+
+{% block addedscripts %} 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjRfoyViYxyvXyTk0Z93hp6QZ3xcdICPg&callback=initMap" async defer> </script>
+<script type="text/javascript">
+
+
+	var map;
+	var currentLocation;
+
+	function markMap(markerLocation){
+		var marker = new google.maps.Marker(markerLocation);
+	}
+
+	function initMap() {
+		var lat = 41.874376;
+		var lng = -71.587187;
+		var myLatLng = {
+			lat: lat,
+			lng: lng
+		};
+		currentLocation = new google.maps.LatLng(myLatLng);
+		//var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+
+		var mapOptions = {
+			center: currentLocation,
+			scrollwheel: true,
+			zoom: 12
+			//mapTypeId: google.maps.mapTypeId.ROADMAP
+		};
+
+		map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		//google.maps.event.trigger(map, 'resize'); //do we need this??
+
+		// mark where client is
+
+		var markerLocation = {
+			map: map,
+			position: myLatLng,
+			title: "you are here :)"
+
+		};
+		var marker = new google.maps.Marker(markerLocation);
+
+
+	}
+
+	function getLocationAndInitMap(){
+		if (navigator.geoLocation)
+    	{
+			navigator.geoLocation.getCurrentPosition(showPosition);	
+    	}
+    	else {
+    		document.write('gelocation not supported in this browser');
+    	}
+
+	} //end getLocationAndInitMap
+
+
+
+	function showPosition(location)
+	{
+		console.log(location);
+
+		var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
+
+		var mapOptions = {
+			center: currentLocation,
+			zoom: 12,
+			mapTypeId: google.maps.mapTypeId.ROADMAP
+		};
+
+		map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+		var marker = new google.maps.Marker({
+			position: currentLocation,
+			map: map
+		});
+	}
+
+
+
+    $(document).ready(function () 
+    {
+    	document.getElementById('baseWindowOpenHeading').innerHTML="Map View";
+    	initMap;
+
+    	//getLocationAndInitMap;
+
+
+    });
+</script>
+{% endblock addedscripts %}
+

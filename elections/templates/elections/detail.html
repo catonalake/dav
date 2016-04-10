@@ -1,0 +1,19 @@
+﻿{% extends 'base2.html' %}
+{% block title %} {{ voter.first_name}} {{ voter.last_name}} {% endblock %}
+
+{% block content %}
+
+<h1> Voter Details for Party {{ voter.party_code }} Voter Details</h1>
+
+
+    <p title="Party codes are R- Republican, D- Democrat, M- Moderate and U- Unaffiliated"> 
+        Party: {{ voter.current_party}}
+    </p>
+    <p title="City where voter is registered "> 
+        City: {{ voter.city}}
+    </p>
+    <p title="Street where voter is registered "> 
+        Street: {{ voter.city}}
+    </p>
+
+{% endblock %}

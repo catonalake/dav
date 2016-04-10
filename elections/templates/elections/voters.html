@@ -1,0 +1,23 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} list of voters at {{ street_number }} {{ street_name }} {{ unit }} {{ city }} {% endblock %}
+
+{% block content %}
+some content - this needs to be iteration through a list of voters at a given address....
+<!--<h1> Voter Details for Party {{ voter.party_code }} Voter Details</h1>
+
+
+    <p title="Party codes are R- Republican, D- Democrat, M- Moderate and U- Unaffiliated"> 
+        Party: {{ voter.party_code}}
+    </p>
+    <p title="City where voter is registered "> 
+        City: {{ voter.city}}
+    </p>
+    <p title="Street where voter is registered "> 
+        Street: {{ voter.city}}
+    </p>
+    -->
+
+{% endblock %}

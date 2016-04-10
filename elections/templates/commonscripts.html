@@ -1,0 +1,36 @@
+﻿{% load staticfiles %}
+
+<!-- # commonscripts.htlm 
+       provides one place for commons scripts 
+    across all pages -->
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- cag20150124 
+    added for jquery 
+    test -->
+<!--
+  
+-->
+    <script src="{% static 'js/jquery-1.12.0.min.js' %}"></script>  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- not sure why this next bit is needed??? removing for now
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    -->    
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+
+<!-- for csrf 
+    just one function 
+    in this script     -->
+    <script src="{% static 'js/getcsrfcookie.js' %}"></script>  <!-- cag20150124 added for csrf in jquery -->
+
+<!-- DATATABLE STUFF ! 
+    known to mess up 
+    drop down
+    navbar -->
+

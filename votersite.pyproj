@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>votersite</Name>
+    <RootNamespace>votersite</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>2f07d4fb-aff5-48cc-b9e8-30fe3d184a0c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>votersite.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="elections\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="elections\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="elections\models.py" />
+    <Compile Include="elections\tests.py" />
+    <Compile Include="elections\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="elections\views - Copy.py" />
+    <Compile Include="elections\views.py" />
+    <Compile Include="elections\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="votersite\__init__.py" />
+    <Compile Include="votersite\settings.py" />
+    <Compile Include="votersite\urls.py" />
+    <Compile Include="votersite\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="elections\templates\404.html" />
+    <Content Include="elections\templates\base.html" />
+    <Content Include="elections\templates\elections\campaigndashboard.html" />
+    <Content Include="elections\templates\elections\voternotes.html" />
+    <Content Include="elections\templates\elections\senatedistrictthenvoters.html" />
+    <Content Include="elections\templates\elections\mobiledistrictthenvoters-mar-18.html" />
+    <Content Include="elections\templates\elections\mvnames.html" />
+    <Content Include="elections\templates\elections\mhome.html" />
+    <Content Include="elections\templates\elections\mpages.html" />
+    <Content Include="elections\templates\head_css.html" />
+    <Content Include="elections\templates\javascript.html" />
+    <Content Include="elections\templates\mbase-mar-18.html" />
+    <Content Include="elections\templates\mbase.html" />
+    <Content Include="elections\templates\basemobile.html" />
+    <Content Include="elections\templates\basewindowopen.html" />
+    <Content Include="elections\templates\elections\districtstats.html" />
+    <Content Include="elections\templates\elections\mobiledistrictthenvoters.html" />
+    <Content Include="elections\templates\elections\districtthenvoters.html" />
+    <Content Include="elections\templates\elections\electablevstatsdatatable.html" />
+    <Content Include="elections\templates\elections\mapcityvoters.html" />
+    <Content Include="elections\templates\elections\electablevstatsdatatable2.html" />
+    <Content Include="elections\templates\elections\mapvoters.html" />
+    <Content Include="elections\templates\elections\mapvoters2.html" />
+    <Content Include="elections\templates\elections\selectedcity.html" />
+    <Content Include="elections\templates\elections\districtwithnames.html" />
+    <Content Include="elections\templates\elections\senatedistrictstats.html" />
+    <Content Include="elections\templates\mapscripts.html" />
+    <Content Include="elections\templates\mnavbar.html" />
+    <Content Include="elections\templates\elections\registration\activate.html" />
+    <Content Include="elections\templates\elections\registration\activation_complete.html" />
+    <Content Include="elections\templates\elections\registration\activation_email.txt" />
+    <Content Include="elections\templates\elections\registration\activation_email_subject.txt" />
+    <Content Include="elections\templates\elections\registration\login.html" />
+    <Content Include="elections\templates\elections\registration\logout.html" />
+    <Content Include="elections\templates\elections\registration\password_change_done.html" />
+    <Content Include="elections\templates\elections\registration\password_change_form.html" />
+    <Content Include="elections\templates\elections\registration\password_reset_complete.html" />
+    <Content Include="elections\templates\elections\registration\password_reset_confirm.html" />
+    <Content Include="elections\templates\elections\registration\password_reset_done.html" />
+    <Content Include="elections\templates\elections\registration\password_reset_email.html" />
+    <Content Include="elections\templates\elections\registration\password_reset_form.html" />
+    <Content Include="elections\templates\elections\registration\registration_closed.html" />
+    <Content Include="elections\templates\elections\registration\registration_complete.html" />
+    <Content Include="elections\templates\elections\registration\registration_form.html" />
+    <Content Include="elections\templates\windowopenstylesheets.html" />
+    <Content Include="elections\templates\commonstylesheets.html" />
+    <Content Include="elections\templates\datatablescripts.html" />
+    <Content Include="elections\templates\datatablestylesheets.html" />
+    <Content Include="elections\templates\elections\electablevstatsdatatableajax.html" />
+    <Content Include="elections\templates\elections\selectedstreet.html" />
+    <Content Include="elections\templates\elections\votersataddress.html" />
+    <Content Include="elections\templates\elections\voters.html" />
+    <Content Include="elections\templates\elections\electablevstatsajax.html" />
+    <Content Include="elections\templates\elections\electablevstats.html" />
+    <Content Include="elections\templates\elections\votergridwithjquery.html" />
+    <Content Include="elections\templates\elections\votersitehome.html" />
+    <Content Include="elections\templates\elections\examplestacked.html" />
+    <Content Include="elections\templates\elections\electable.html" />
+    <Content Include="votersite\static_in_pro\our_static\css\custom.css" />
+    <Content Include="votersite\static_in_pro\our_static\etc\mysqlpw.txt" />
+    <Content Include="votersite\static_in_pro\our_static\etc\sk.txt" />
+    <Content Include="votersite\static_in_pro\our_static\img\favicon.ico" />
+    <Content Include="elections\templates\forms.html" />
+    <Content Include="elections\templates\navbar.html" />
+    <Content Include="elections\templates\votertablescripts.html" />
+    <Content Include="elections\templates\commonscripts.html" />
+    <Content Include="elections\templates\homepage.html" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap-theme.css" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap-theme.css.map" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap-theme.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap-theme.min.css.map" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap.css.map" />
+    <Content Include="votersite\static_in_pro\our_static\css\bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\css\ie10-viewport-bug-workaround.css" />
+    <Content Include="votersite\static_in_pro\our_static\css\navbar-static-top.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\autoFill.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\autoFill.bootstrap.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\autoFill.bootstrap.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\autoFill.foundation.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\autoFill.foundation.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\autoFill.jqueryui.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\autoFill.jqueryui.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\dataTables.autoFill.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\dataTables.autoFill.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\bootstrap-theme.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\bootstrap-theme.css.map" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\bootstrap-theme.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\bootstrap.css.map" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\js\bootstrap.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\js\bootstrap.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\js\npm.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\buttons.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\common.scss" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\mixins.scss" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.bootstrap.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.bootstrap.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.colVis.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.colVis.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.flash.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.flash.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.foundation.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.foundation.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.html5.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.html5.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.jqueryui.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.jqueryui.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.print.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\buttons.print.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\dataTables.buttons.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\dataTables.buttons.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\swf\flashExport.swf" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\colReorder.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\js\dataTables.colReorder.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\js\dataTables.colReorder.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\dataTables.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\dataTables.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\dataTables.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\dataTables.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\dataTables.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\dataTables.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\jquery.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\jquery.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\jquery.dataTables_themeroller.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\images\sort_asc.png" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\images\sort_asc_disabled.png" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\images\sort_both.png" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\images\sort_desc.png" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\images\sort_desc_disabled.png" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\dataTables.bootstrap.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\dataTables.bootstrap.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\dataTables.foundation.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\dataTables.foundation.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\dataTables.jqueryui.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\dataTables.jqueryui.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\jquery.dataTables.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\jquery.dataTables.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\datatables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\datatables.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\datatables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\datatables.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\js\dataTables.fixedHeader.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\js\dataTables.fixedHeader.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\jQuery-2.2.0\jquery-2.2.0.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\jQuery-2.2.0\jquery-2.2.0.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\JSZip-2.5.0\jszip.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\JSZip-2.5.0\jszip.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\keyTable.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\js\dataTables.keyTable.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\js\dataTables.keyTable.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\pdfmake-0.1.18\build\pdfmake.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\pdfmake-0.1.18\build\pdfmake.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\pdfmake-0.1.18\build\vfs_fonts.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\responsive.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\dataTables.responsive.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\dataTables.responsive.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\responsive.bootstrap.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\responsive.bootstrap.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\responsive.foundation.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\responsive.foundation.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\responsive.jqueryui.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\responsive.jqueryui.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\rowReorder.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\js\dataTables.rowReorder.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\js\dataTables.rowReorder.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\scroller.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\js\dataTables.scroller.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\js\dataTables.scroller.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.bootstrap.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.bootstrap.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.dataTables.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.dataTables.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.foundation.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.foundation.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.jqueryui.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\select.jqueryui.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\js\dataTables.select.js" />
+    <Content Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\js\dataTables.select.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="votersite\static_in_pro\our_static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="votersite\static_in_pro\our_static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="votersite\static_in_pro\our_static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="votersite\static_in_pro\our_static\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="votersite\static_in_pro\our_static\img\brandingicon.png" />
+    <Content Include="votersite\static_in_pro\our_static\img\winnieandpooh.JPG" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\index.html" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\ajax-loader.gif" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\action-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\action-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\alert-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\alert-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-d-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-d-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-l-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-l-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-r-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-r-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-u-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\arrow-u-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\audio-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\audio-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\back-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\back-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\bars-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\bars-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\bullets-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\bullets-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\calendar-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\calendar-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\camera-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\camera-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-d-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-d-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-l-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-l-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-r-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-r-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-u-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\carat-u-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\check-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\check-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\clock-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\clock-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\cloud-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\cloud-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\comment-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\comment-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\delete-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\delete-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\edit-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\edit-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\eye-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\eye-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\forbidden-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\forbidden-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\forward-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\forward-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\gear-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\gear-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\grid-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\grid-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\heart-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\heart-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\home-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\home-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\info-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\info-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\location-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\location-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\lock-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\lock-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\mail-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\mail-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\minus-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\minus-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\navigation-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\navigation-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\phone-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\phone-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\plus-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\plus-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\power-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\power-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\recycle-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\recycle-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\refresh-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\refresh-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\search-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\search-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\shop-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\shop-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\star-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\star-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\tag-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\tag-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\user-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\user-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\video-black.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\video-white.png" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\jquery.mobile.icons.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\liberty.css" />
+    <Content Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\liberty.min.css" />
+    <Content Include="votersite\static_in_pro\our_static\js\bootstrap.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\bootstrap.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\getcsrfcookie.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\home.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\html5shiv.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\ie-emulation-modes-warning.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jquery-1.12.0.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jquery.dataTables.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstestdt-mar-21.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstestdt-mar-26.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstestdt2-mar-18.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\mobilejs.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\mapcityvoters.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstestdt2.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstestdtajax.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\maptest.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\mydatatable.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\needhomes.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\needvoters.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jquerytest.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstestdt.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\jstest.js" />
+    <Content Include="votersite\static_in_pro\our_static\img\sample.txt" />
+    <Content Include="elections\templates\base1.html" />
+    <Content Include="elections\templates\base2.html" />
+    <Content Include="elections\templates\elections\detail.html" />
+    <Content Include="elections\templates\elections\home.html" />
+    <Content Include="elections\templates\elections\votertable.html" />
+    <Content Include="elections\templates\elections\index.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="votersite\static_in_pro\our_static\js\npm.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\respond.min.js" />
+    <Content Include="votersite\static_in_pro\our_static\js\traversefunction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="elections\" />
+    <Folder Include="elections\static\" />
+    <Folder Include="elections\templates\elections\registration\" />
+    <Folder Include="votersite\static_in_pro\" />
+    <Folder Include="votersite\static_in_pro\our_static\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\AutoFill-2.1.1\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\fonts\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Bootstrap-3.3.6\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Buttons-1.1.2\swf\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\ColReorder-1.3.1\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\images\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\DataTables-1.10.11\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\FixedHeader-3.1.1\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\jQuery-2.2.0\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\JSZip-2.5.0\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\KeyTable-2.1.1\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\pdfmake-0.1.18\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\pdfmake-0.1.18\build\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Responsive-2.0.2\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\RowReorder-1.1.1\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Scroller-1.4.1\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\css\" />
+    <Folder Include="votersite\static_in_pro\our_static\DataTables\Select-1.1.2\js\" />
+    <Folder Include="votersite\static_in_pro\our_static\fonts\" />
+    <Folder Include="votersite\static_in_pro\our_static\jquery-mobile-theme\" />
+    <Folder Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\" />
+    <Folder Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\" />
+    <Folder Include="votersite\static_in_pro\our_static\jquery-mobile-theme\themes\images\icons-png\" />
+    <Folder Include="votersite\static_in_pro\our_static\js\" />
+    <Folder Include="votersite\static_in_pro\media_root\" />
+    <Folder Include="votersite\static_in_pro\our_static\" />
+    <Folder Include="votersite\static_in_pro\our_static\img\" />
+    <Folder Include="votersite\static_in_pro\our_static\etc\" />
+    <Folder Include="votersite\static_in_pro\static_root\" />
+    <Folder Include="elections\templates\" />
+    <Folder Include="elections\templates\elections\" />
+    <Folder Include="votersite\" />
+    <Folder Include="static_in_site\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

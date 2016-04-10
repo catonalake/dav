@@ -1,0 +1,68 @@
+﻿{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="RI voter information">
+    <meta name="author" content="Cathleen Griffeth">
+
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static 'jquery-mobile-theme/themes/liberty.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'jquery-mobile-theme/themes/jquery.mobile.icons.min.css' %}"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+
+
+    <link rel="icon" href="{% static 'img/winnieandpooh.JPG' %}">
+
+    <title>{% block title %} VoTech Home Page    {% endblock title %}</title>
+
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+    <h1 id="pageh1">{% block mobilepage %} Home   {% endblock mobilepage %}</h1>
+
+  <div data-role="header">
+    <h1 id="firsth1">{% block mobileheader %} VoTech {% endblock mobileheader %}</h1>
+
+  </div>
+
+
+    {% block mobilenavbar %} 
+      {% include 'mnavbar.html' %}
+    {% endblock mobilenavbar %}
+
+    <div data-role="main" class="ui-content">
+      {% block mobilemain %}
+      {% endblock mobilemain %}
+    </div>
+
+
+  <div data-role="footer">
+    <h1>{% block mobilefooter %}    {% endblock mobilefooter %}</h1>
+    <p id="copyright" class="copyright">Copyright 2016 VoTech Inc.</p>
+  </div>
+
+</div> 
+
+</body>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="{% static 'js/getcsrfcookie.js' %}"></script>  
+
+    {% block addedscripts %}
+
+
+
+    {% endblock addedscripts %}
+
+</html>

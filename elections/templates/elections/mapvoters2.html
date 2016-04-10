@@ -1,0 +1,40 @@
+{% extends 'basewindowopen.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} 
+Voter Map
+{% endblock title %}
+
+
+{% block jumbotron %} 
+
+ 
+{% endblock jumbotron %} 
+{% block content %}
+
+<button id="mapWindowButton" class="btn btn-info" onclick="loadAPI();">Load Map</button>
+<div id="map-canvas" style="width:640px;height:640px"></div>
+
+{% endblock content %}
+
+{% block formy %}
+
+{% endblock formy %}
+
+
+{% block addedscripts %} 
+
+    {% include 'mapscripts.html' %}
+
+        <script src="{% static 'js/maptest.js' %}"></script>
+
+        <script type="text/javascript">
+
+
+
+
+</script>
+{% endblock addedscripts %}
+

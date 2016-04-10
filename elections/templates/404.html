@@ -1,0 +1,46 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="{% static 'img/winnieandpooh.JPG' %}">
+
+    <title>{% block title %}Voter View    {% endblock title %}</title>
+      
+    {% include 'commonstylesheets.html' %}
+
+
+  </head>
+
+  <body>
+
+   <div class="container-fluid">
+    {% include 'navbar.html' %}
+   </div>
+
+<div>
+    <h1> OOPS.... </h1>
+    <h2> ....This is embarassing..... </h2>
+    <h3>  To avoid errors, please be sure to log in.</h3>
+    <h3>   If this problem persists, please contact your support team :)  </h3>
+</div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+
+  </body>
+
+    {% include 'commonscripts.html' %}
+
+</html>

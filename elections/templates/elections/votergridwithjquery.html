@@ -1,0 +1,85 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+
+{% block title %} 
+Using a Grid
+{% endblock title %}
+
+
+{% block jumbotron %} 
+
+ <div class="container-fluid">
+
+<div class="row">
+  <div class="col-xs-6 col-md-4" style="background-color:orange">a lot of stuff just in one place - how the heck will this work???</div>
+  <div class="col-xs-6 col-md-4" style="background-color:yellow">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4" style="background-color:purple">.col-xs-6 .col-md-4</div>
+</div>
+
+
+
+</div> <!-- container -->
+ 
+{% endblock jumbotron %} 
+{% block content %}
+
+<h1>List of Voters by last name</h1>
+<h2>This is Index.html - how can i reference what file this is directly?  maybe with OS??</h2>
+    {% if republicans %}
+    <h3>Republicans with pagination List</h3>
+    {% for voter in republicans %}
+    <div class="row">
+      <div class="col-md-6"><a href="{% url 'detail' voter.voter_id %}">
+          {{ voter.different_mailing }}   
+          {{ voter.last_name|lower|capfirst }} 
+          {{ voter.first_name|lower|capfirst }} 
+          {{ voter.party_code }} 
+          {{ voter.city|lower|capfirst }} </a>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+        <h3>some other list</h3>
+        <p>No voters are available.</p>
+    {% endif %}
+
+
+<div class="pagination">
+    <span class="step-links">
+        {% if republicans.has_previous %}
+            <a class="btn btn-sm btn-default" href="?page={{ republicans.previous_page_number }}" role="button">previous</a>
+
+            {#<a href="?page={{ republicans.previous_page_number }}">previous</a>#}
+        {% endif %}
+
+        <span class="current">
+            Page {{ republicans.number }} of {{ republicans.paginator.num_pages }}.
+        </span>
+
+        {% if republicans.has_next %}
+            <a class="btn btn-sm btn-default" href="?page={{ republicans.next_page_number }}" role="button">next</a>
+            {#<a href="?page={{ republicans.next_page_number }}">next</a>#}
+        {% endif %}
+    </span>
+</div>
+
+<div >
+      <h4>test jquery </h4>
+    <h3>content is "before pushing button" with page load, but if JQuery works it will say note it was successful</h3>
+        <button id="jqtestbutton" type="button"
+            onclick="jqtest()">click to test jquery - should change text below</button>
+        <p id="jqtesting"> before pushing the button</p>
+
+</div>
+
+
+{% endblock content %}
+
+{% block formy %}{% endblock formy %}
+
+
+{% block addedscripts %} 
+        <script src="{% static 'js/home.js' %}"></script>
+        <script src="{% static 'js/jstest.js' %}"></script>
+{% endblock addedscripts %}
+

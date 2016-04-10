@@ -1,0 +1,78 @@
+﻿{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="{% static 'img/winnieandpooh.JPG' %}">
+
+    <title>{% block title %}Voter View    {% endblock title %}</title>
+      
+    {% include 'commonstylesheets.html' %}
+
+      {% block addedstylesheets %}
+
+      {% endblock addedstylesheets %}
+      
+  </head>
+
+  <body>
+
+   <div class="container-fluid">
+    {% include 'navbar.html' %}
+   </div>
+
+    {% block jumbotron %}
+    {% endblock jumbotron %}
+   <div class="container-fluid">
+
+  </div> <!-- /container -->
+
+  <div class="container">
+    {% block content %}
+    {% endblock content %}
+  </div> <!-- /container -->
+
+  <div class="container">
+    {% block formy %}
+    {% endblock formy %}
+  </div> <!-- /container -->
+
+
+
+    <!-- Bootstrap core JavaScript
+            cag! todo: look up why drop down is not working - could be related to jquery?
+            see http://stackoverflow.com/questions/9529574/bootstrap-dropdown-menu-not-working
+        issue with drop down fixed - could be related to omission of container 
+        still need to figure out why form errors are not displayed in red font...
+    ====================================================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- cag20160224 - was getting an error on the home page due to this - not sure why this next bit is needed?? removing for now
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    -->
+
+    <!--     <script src="../../dist/js/bootstrap.min.js"></script>   -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+
+  </body>
+
+    {% include 'commonscripts.html' %}
+
+    {% block addedscripts %}
+
+    {% endblock addedscripts %}
+
+</html>

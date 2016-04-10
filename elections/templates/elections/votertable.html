@@ -1,0 +1,99 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} List of Voters in Party {{request.party}} {% endblock %}
+
+{% block content %}
+
+
+
+<div>
+  <h1 id="firsth1">List of Voters and details using a table</h1>
+  <p id="firstp">This page can display voters in a specific party, exluding a party or all parties!</p>      
+</div>
+
+<div>
+  <h2>This is votertable.html</h2>
+  <p>The party specified is {{party_specified}}</p>
+  <p>I'm just not sure if i excluded or specified the party.</p>
+</div>
+
+<div>
+  <h3>next step is to see how bootstrap is working</h3>
+  <p>currently trying w3 - note that a copy of votertable.html is in the elections folder in case this one is messed up</p>
+</div>
+
+
+
+<div>
+  <h4>Select Option</h4>
+
+    <form action="b()">
+ 
+            <input type="radio" name="party" value="all" checked />All
+            <br>
+            <input type="radio" name="party" value="specificpartylist" />Specific Party
+            <br>
+            <input type="radio" name="party" value="exludepartylist" />Exlude Party
+            <br>
+            <input type="submit" value="Show Voters" />
+    </form> 
+</div>
+
+
+<div>
+      <h4>important button below!</h4>
+
+        <button id="mybutton" type="button"
+            onclick="changeButton()">click to change first paragraph</button>
+ 
+</div>
+
+
+    {% if voter_table %} <!--# if context is voter_table -->
+    <div>
+<!--    {# cag! todo: 
+        # story: as a developer i want to be able to call the same routine with different contexts so the layout is the same but some content is unique so that 
+        find out how to reuse logic here 
+        - with difft context, but some similar things for multiple contexts 
+        e.g. if voter_table h1 or h2 content will be different from if another context
+        #}
+    -->
+    <h3>Voter Table</h3>
+    <table id="votertable" class="table table-bordered">
+        <tr>
+             <th>Last Name</th>
+             <th>First Name</th>
+             <th>Party Code</th>
+             <th>City</th>
+             <th>Street</th>
+             <th>House Number</th>
+             <th>Congressional District</th>
+             <th>Date Last Active</th>
+         </tr> <!-- # column title headings -->
+    {% for voter in voter_table %}
+        <tr id="voterrowclass">   <!-- add class="success" or whatever based on party -->
+            <td> <a href="{% url 'detail' voter.voter_id %}"> {{ voter.different_mailing }}   {{ voter.last_name|lower|capfirst }} </a> </td>
+            <td> {{ voter.first_name|lower|capfirst }} </td>
+            <td> {{ voter.party_code}} </td>
+            <td> {{ voter.city|lower|capfirst}} </td>
+            <td> {{ voter.street_name|lower|capfirst}} </td>
+            <td> {{ voter.street_number}} </td>
+            <td> {{ voter.congressional_district}} </td>
+            <td> {{ voter.date_last_active}} </td>
+        </tr> <!-- # model data sent from specified view -->
+
+    {% endfor %}
+    </table>
+</div>
+{% else %}
+<div>
+      <h3>some other list</h3>
+    <p>No voters are available.</p>
+</div>
+{% endif %}
+
+
+{% include 'votertablescripts.html' %}
+{% endblock content %}

@@ -1,0 +1,104 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} Voter Notes {% endblock %}
+
+{% block addedstylesheets %} 
+
+ <!--   
+     -->
+     {% include 'datatablestylesheets.html' %}
+
+ {% endblock %}
+
+
+
+{% block content %}
+
+<div class="info">
+  <h1 id="firsth1">{{ campaign_username }} Campaign Voter Notes  </h1>
+<!-- 
+    commenting this out 
+    maybe use to 
+    clear map or
+    incorporate  selection checkboxes and use to add map or remove from map? 
+    <button id="mapWindowButton" class="btn btn-info" onclick="loadAPI();">Load Map</button>
+-->
+
+<p id="listdescription"> {{ list_description }} 
+    {% for t in town_list %}
+    {{t}}
+    {% endfor %} 
+</p>
+</div>
+
+
+ {% if vnotes_table %}
+
+<div class="table-responsive">
+
+<table id="notetableid" class="display table table-hover" >
+    <thead>
+        <tr>
+<!--            <th><input type="text" id="citysearch" class="form-control" placeholder="City Search"/>City</th>-->
+            <th class="all">Date Added</th>
+            <th class="none">Voter Id</th>
+            <th class="all">Notes</th>
+            <th class="all">Action (F = Follow Up)</th>
+            <th class="none">Team Member ID</th>
+            <th class="none">Campaign</th>
+            <th class="none">Status</th>
+        </tr>
+    </thead>
+    <tfoot>
+
+    </tfoot>
+    <tbody>
+    {% for vnotes in vnotes_table %}
+        <tr id="noterowid" 
+            data-voter-id="{{ vnotes.voter_id }}"
+            class="noterowclass clickable" 
+            data-request-controller="{{ request_controller }}"
+            data-rowid="{{ vnotes.vn_id }}"
+            data-campaign-username="{{ vnotes.campaign_username }}"
+            >
+            <td> {{ vnotes.date_added}} </td>
+            <td> {{ vnotes.voter_id }}</td>
+            <td> {{ vnotes.notes_desc }} </td>
+            <td> {{ vnotes.campaign_action}} </td>
+            <td> {{ vnotes.team_member_username}} </td>
+            <td> {{ vnotes.campaign_username}} </td>
+            <td> {{ vnotes.notes_status}} </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% else %}
+<div>
+      <h3>No {{ list_description }} Found </h3>
+    <p>{{ query_information }}</p>
+</div>
+{% endif %}
+
+<div>
+    <p class="lead" id="testpara"></p>
+
+</div>
+
+
+
+{% endblock content %}
+
+{% block addedscripts %} 
+ <!--   
+          -->
+    {% include 'datatablescripts.html' %}
+        <script src="{% static 'js/mydatatable.js' %}"></script> <!-- cag20160116 - use this to add voter names :) -->
+        <script src="{% static 'js/traversefunction.js' %}"></script>
+        <script src="{% static 'js/voternotes.js' %}"></script> <!-- cag20160410 - update this to find voter names for the voter id's listed? :) -->
+        <script src="{% static 'js/showmessagejs.js' %}"></script>
+
+{% endblock addedscripts %}

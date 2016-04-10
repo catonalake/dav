@@ -1,0 +1,88 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} Party Totals by Street {% endblock %}
+
+{% block addedstylesheets %} 
+
+ <!--   
+     -->
+     {% include 'datatablestylesheets.html' %}
+
+ {% endblock %}
+
+
+
+{% block content %}
+
+<div>
+  <h1 id="firsth1">      Voter Stats by Street Name </h1>
+    <p>Using Ajax to Populate the Data Table using the town_list variable</p>
+    <p> Towns include: </p>
+    <p> 
+        {% for t in town_list %}
+        {{t}}
+        {% endfor %} 
+    </p>
+</div>
+
+ {% if vstats_ajax_table %}
+
+
+<div class="table-responsive">
+
+<table id="ajaxtableid" class="display table table-hover" data-url="{% url 'getdata_json' %}">
+    <thead>
+        <tr>
+            <th>Street Name, City Name </th>
+            <th>R Voters</th>
+            <th>U Voters</th>
+            <th>M Voters</th>
+            <th>D Voters</th>
+        </tr>
+    </thead>
+    <tfoot>
+
+    </tfoot>
+    <tbody>
+    {% for vstats in json_data %}
+        <tr id="voterrowid" 
+            class="voterrowclass" 
+            data-rowid ="{{ vstats.vstat_id }}"
+            data-city ="{{ vstats.city }}"
+            data-street_name ="{{ vstats.street_name }}"
+            >
+            <td>{{ vstats.city }} {{ vstats.street_name }} </td>
+            <td>{{ vstats.rvoters }}</td>
+            <td>{{ vstats.uvoters }}</td>
+            <td>{{ vstats.mvoters }}</td>
+            <td>{{ vstats.dvoters }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% else %}
+<div>
+      <h3>context is not vstats_ajax_table </h3>
+    <p>unable to display data with context provided.</p>
+</div>
+{% endif %}
+
+
+
+{% endblock content %}
+
+{% block addedscripts %} 
+ <!--   
+          -->
+    {% include 'datatablescripts.html' %}
+
+        <script src="{% static 'js/mydatatable.js' %}"></script> <!-- cag20160116 - use this to add voter names :) -->
+        <script src="{% static 'js/needvoters.js' %}"></script> <!-- cag20160116 - use this to add voter names :) -->
+        <script src="{% static 'js/needhomes.js' %}"></script> <!-- cag20160116 - use this to add voter names :) -->
+        <script src="{% static 'js/jstestdtajax.js' %}"></script>
+
+{% endblock addedscripts %}

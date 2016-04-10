@@ -1,0 +1,83 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} Party Totals by Street {% endblock %}
+
+{% block addedstylesheets %} 
+
+ <!--   
+     -->
+     {% include 'datatablestylesheets.html' %}
+
+ {% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+      <h1 id="firsth1" class="panel-title">Campaign Dashboard </h1>
+    </div>
+
+
+    <div class="panel-body">
+        <p id="listdescription"> {{ list_description }} 
+            {% for t in town_list %}
+            {{t}}
+            {% endfor %} 
+        </p>
+
+{% if city_array %}
+
+<p>
+<a class="btn btn-lg btn-default btn-block" href="{% url 'city' %}" role="button">City Walking Lists &raquo;</a>
+</p>
+
+{% endif %}
+
+{% if senate_array %}
+
+<p>
+<a class="btn btn-lg btn-default btn-block" href="{% url 'senatedistricts' %}" role="button"> Senate Walking Lists &raquo;</a>
+</p>
+
+{% endif %}
+
+{% if house_array %}
+
+<p>
+<a class="btn btn-lg btn-default btn-block" href="{% url 'housedistricts' %}" role="button">House Walking Lists &raquo;</a>
+</p>
+
+{% endif %}
+
+<p>
+<a class="btn btn-lg btn-default btn-block" href="{% url 'pendingnotes' %}" role="button">Voter Notes - Pending Review &raquo;</a>
+</p>
+
+<p>
+<a class="btn btn-lg btn-default btn-block" href="{% url 'followupnotes' %}" role="button">Voter Notes - Follow Up  &raquo;</a>
+</p>
+
+<p>
+<a class="btn btn-lg btn-default btn-block" href="{% url 'approvednotes' %}" role="button">Voter Notes - Approved &raquo;</a>
+</p>
+
+
+  </div> <!-- panel body -->
+</div> <!-- panel -->
+
+
+{% endblock content %}
+
+{% block addedscripts %} 
+ <!--   
+          -->
+    {% include 'datatablescripts.html' %}
+
+
+{% endblock addedscripts %}

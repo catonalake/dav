@@ -1,0 +1,58 @@
+﻿{% extends 'base2.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} 
+Voter List
+{% endblock title %}
+
+
+{% block jumbotron %} 
+
+ <div class="container-fluid">
+
+<div class="row">
+  <div class="col-xs-6 col-md-4">a lot of stuff just in one place - ho wi</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+
+
+</div> <!-- container -->
+ 
+{% endblock jumbotron %} 
+{% block content %}
+
+<h1>List of Voters by last name</h1>
+<h2>This is Index.html - how can i reference what file this is directly?  maybe with OS??</h2>
+    {% if republican_list %}
+    <h3>Republican List</h3>
+    <ul>
+    {% for voter in republican_list %}
+        {# replacing line below with the one immediately following it - to avoid hard coding urls #}
+        {# <li><a href="/elections/{{ voter.voter_id }}/">{{ voter.last_name }}</a></li>#}
+        <li><a href="{% url 'detail' voter.voter_id %}">  {{ voter.different_mailing }}   {{ voter.last_name|lower|capfirst }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h3>some other list</h3>
+    <p>No voters are available.</p>
+{% endif %}
+
+
+
+
+{% endblock content %}
+
+{% block formy %}
+
+{% endblock formy %}
+
+
+{% block addedscripts %} 
+<!--        <script src="{{ STATIC_URL }}js/home.js" ></script>-->
+        <script src="{% static 'js/home.js' %}"></script>
+{% endblock addedscripts %}
+

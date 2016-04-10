@@ -1,0 +1,23 @@
+﻿{% load staticfiles %}
+
+<!-- # mapscripts.htlm 
+       provides one place for map scripts 
+    across all pages -->
+
+
+<!-- Placed at the end of the document so the pages load faster -->
+
+<!-- cag20160327 adding below 
+    to test touch events for maps 
+    see bug and workaround at http://stackoverflow.com/questions/28661844/touch-events-not-working-with-google-maps-in-angular/31023464 -->
+<script>
+
+function MapTouch() {
+        return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+    }
+    if (MapTouch() === true) {
+        navigator = navigator || {};
+        navigator.msMaxTouchPoints = navigator.msMaxTouchPoints || 2;
+   }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJFLGBurX1EgGD4jAW5j6WclJhyoUiYI&callback=loadMaps"  type="text/javascript"></script>

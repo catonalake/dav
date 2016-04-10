@@ -1,0 +1,34 @@
+﻿{% extends 'mbase.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %} VoTech {% endblock %}
+
+{% block mobilepage %} 
+    Welcome {{sitevisitor}}  
+{% endblock mobilepage %}
+
+{% block mobileheader %} 
+ VoTech Home
+{% endblock mobileheader %}
+
+    {% block mobilenavbar %} 
+
+    {% endblock mobilenavbar %}
+
+    {% block mobilemain %}
+        <p>This is a paragraph on the home page to test some links to specific pages for voter information.</p>
+            <button id="repbutton" class="ui-btn">Map Your Route</button>
+            <button id="senbutton" class="ui-btn">Generate Walking Lists</button>
+            <br/>
+            <a href="#" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-left ui-corner-all ui-shadow" data-rel="back">Back</a>
+
+    {% endblock mobilemain %}
+
+    <h1>{% block mobilefooter %}    {% endblock mobilefooter %}</h1>
+
+{% block addedscripts %} 
+
+
+
+{% endblock addedscripts %}

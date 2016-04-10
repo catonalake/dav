@@ -1,0 +1,82 @@
+﻿   {% load staticfiles %}
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          {#<a class="navbar-brand" href="#">Voter Site Landing Page</a>#}
+             <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/brandingicon.png' %}" /></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+    {% if request.user.is_authenticated %}
+            <li class=""><a href="{% url 'campaign_dashboard' %}">Dashboard</a></li>
+    {% endif %}
+
+
+<!--
+            <li class=""><a href="{% url 'city' %}">City Stats</a></li>
+            <li class=""><a href="{% url 'housedistricts' %}">House Stats</a></li>
+            <li class=""><a href="{% url 'senatedistricts' %}">Senate Stats</a></li>
+
+            <li class=""><a href="{% url 'districtthenvoters' %}">House Voters</a></li>
+            <li class=""><a href="{% url 'senatedistrictthenvoters' %}">Senate Voters</a></li>
+            <li class=""><a href="#about">About</a></li>
+            <li class=""><a href="#contact">Contact</a></li>
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'vajax' %}">View of Voter Stats with Ajax Voter Lookups</a></li>
+                <li><a href="{% url 'vhistfun' %}">View Voter Stats with Django Pagination</a></li>
+                <li><a href="{% url 'index' %}">List of voters / long running query </a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>  -->
+          </ul>
+
+
+
+
+          <ul class="nav navbar-nav navbar-right">
+            {% if request.user.is_authenticated %}
+                <li> <p class="navbar-text">You are logged in as {{ sitevisitor }} </p>
+                <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'registration_register' %}">Register</a></li>
+            {% endif %}
+          </ul> 
+            {% if not request.user.is_authenticated %}
+                <form class="nav form-inline navbar-right" method="POST" action="{% url 'auth_login' %}">{% csrf_token %}
+                <div class="form-group">
+                    <label class="sr-only" for="username">User Name</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                    <label class="sr-only" for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Log in</button>
+                </form>
+
+<!--            <form class="navbar-right form-inline" method="POST" action="{% url 'auth_login' %}">{% csrf_token %}
+                <div class="form-group">
+                  <input type="text" class="form-control" name="username" placeholder="Username" />
+                </div>
+                <div>
+                  <input type="password" class="form-control" name="password" placeholder="Passw"/>
+                </div>
+                <button type="submit" class="btn btn-default">Login</button>
+            </form>  -->
+            {% endif %}
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
